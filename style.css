@@ -16,8 +16,16 @@
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     line-height: 1.5em;
-    background-color: var(--fundo-principal);
     color: var(--texto);
+    background-color: rgb(220, 233, 255);
+    transition: background-color 1.0s, color 1.0s;
+}
+
+body.escuro {
+    --fundo-principal: #1f1f1f;
+    --texto: #ffffff;
+    --destaque: #df5313;
+    background-color: rgb(0, 0, 0);
 }
 
 header {
@@ -26,6 +34,27 @@ header {
     padding: 10px;
     display: flex;
     justify-content: flex-end;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+section article {
+    background-color: var(--fundo-principal);
+    margin: 20px;
+}
+
+section#ficha {
+    background-color: var(--fundo-principal);
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 
 #menu ul {
@@ -61,6 +90,7 @@ header {
 
 #ficha h1 {
     color: var(--destaque);
+    line-height: 1.5;
 }
 
 #ficha img {
@@ -78,7 +108,7 @@ header {
 }
 
 #social img {
-    width: 50px;
+    width: 30px;
     margin: 10px;
 }
 
@@ -147,4 +177,22 @@ article {
 
 .boxformation h3 {
     color: var(--destaque);
+}
+
+@media screen and (min-width: 768px) {
+
+    main {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    section article {
+        width: 70vw;
+    }
+
+    section#ficha {
+        width: 20vw;
+    }
+
 }
